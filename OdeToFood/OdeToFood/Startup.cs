@@ -36,7 +36,7 @@ namespace OdeToFood
 
             app.Run(async (context) =>
             {
-                var greeting = greeter.GetMessageOfTheDa();
+                var greeting = greeter.GetMessageOfTheDay();
                 //context.Response.ContentType = "text/plain";
                 await context.Response.WriteAsync($"Not found");
                 //await context.Response.WriteAsync($"{greeting} : {env.EnvironmentName}");

@@ -13,7 +13,7 @@ namespace OdeToFood.Services{
                 new Restaurant{ Id = 3, Name = "Yuner's Pizza Place"},
             };
         }
-        public IEnumerable<Restaurant> GetAllRestaurant() {
+        public IEnumerable<Restaurant> GetAllRestaurants() {
             return _restaurants.OrderBy(r=>r.Name);
         }
 
