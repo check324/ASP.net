@@ -30,17 +30,30 @@ namespace OdeToFood
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
+            //app.Use(next => {
+            //    return async context => {
+            //        logger.LogInformation("Request incoming");
+            //        if (context.Request.Path.StartsWithSegments("/mym")) {
+            //            await context.Response.WriteAsync("Hit!!");
+            //            logger.LogInformation("Request handled");
+            //        } else {
+            //            await next(context);
+            //            logger.LogInformation("Response outgoing");
+            //        }
+            //    };
+            //}
+            //);
             app.UseStaticFiles();
             //app.UseMvcWithDefaultRoute();
             app.UseMvc(ConfigureRoutes);
 
-            app.Run(async (context) =>
-            {
-                var greeting = greeter.GetMessageOfTheDay();
-                //context.Response.ContentType = "text/plain";
-                await context.Response.WriteAsync($"Not found");
-                //await context.Response.WriteAsync($"{greeting} : {env.EnvironmentName}");
-            });
+            //app.Run(async (context) =>
+            //{
+            //    var greeting = greeter.GetMessageOfTheDay();
+            //    //context.Response.ContentType = "text/plain";
+            //    await context.Response.WriteAsync($"Not found");
+            //    //await context.Response.WriteAsync($"{greeting} : {env.EnvironmentName}");
+            //});
         }
 
         private void ConfigureRoutes(IRouteBuilder routeBuilder) {
