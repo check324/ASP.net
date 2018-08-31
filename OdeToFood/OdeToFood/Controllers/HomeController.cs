@@ -27,9 +27,15 @@ namespace OdeToFood.Controllers
             }
             return View(model);
         }
-
+        [HttpGet]
         public IActionResult Create(){
             return View();
         }
+        [HttpPost]
+        public IActionResult Create(RestaurantEditModel model) {
+
+            return Content("post");
+        }
     }
 }
+ 
